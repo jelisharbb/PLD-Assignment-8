@@ -6,7 +6,7 @@
 # Repeat asking the user until the random number has been guessed correctly.
 
 # greetings to the user
-print ("\nGUESS THE NUMBER GAME")
+print ("\nGUESS THE NUMBER GAME \n\nDirection: This program will generate one random number from 0 to 100. You should guess it correctly. Otherwise, you would be asked repeatedly. Don't worry, we will give you some hints.")
 
 # code for generating random number from 0-100
 from random import randrange
