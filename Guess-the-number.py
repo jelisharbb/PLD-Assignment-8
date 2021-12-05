@@ -6,25 +6,25 @@
 # Repeat asking the user until the random number has been guessed correctly.
 
 # greetings to the user
-print ("\nGUESS THE NUMBER GAME \n\nDirection: This program will generate one random number from 0 to 100. You should guess it correctly. Otherwise, you would be asked repeatedly. Don't worry, we will give you some hints.")
+print ("\n\033[1m| GUESS THE NUMBER GAME |\033[0m \n\n\033[1m\033[95mDirection:\033[0m This program will generate one \033[4mrandom number from 0 to 100.\033[0m You should guess it correctly. Otherwise, you would be asked repeatedly. Don't worry, we will give you some hints.")
 
 # code for generating random number from 0-100
 from random import randrange
 randomNum = randrange(0, 100)
 
-userGuess = int(input("\nEnter your guess here: "))
+userGuess = int(input("\n\033[1m\033[96mEnter your guess here: \033[0m"))
 
 # a code block that will ask the user repeatedly until the random number has been guessed correctly
 while randomNum != userGuess:
     if userGuess > randomNum:
-        userGuess = int(input("Your input number is greater than the number. Try decreasing your numerical input. \n\nEnter your guess here: "))
+        userGuess = int(input("Your guess is \033[93mgreater than\033[0m the number. Try \033[93mdecreasing\033[0m your numerical input. \n\n\033[1m\033[96mEnter your guess here: \033[0m"))
         if userGuess == randomNum:
             break
     elif userGuess < randomNum:
-        userGuess = int(input("Your input number is less than the number. Try increasing your numerical input. \n\nEnter your guess here: "))
+        userGuess = int(input("Your guess is \033[93mless than\033[0m the number. Try \033[93mincreasing\033[0m your numerical input. \n\n\033[1m\033[96mEnter your guess here: \033[0m"))
         if userGuess == randomNum:
             break
 
 # if the user guessed the number correctly
 if userGuess == randomNum:
-    print (f"\nYou're correct! \nCorrect answer: {randomNum}\n")
+    print (f"\n\033[1m\033[92mYou're correct!\033[0m \nThe answer is {randomNum}.\n")
