@@ -24,3 +24,7 @@ while randomNum != userGuess:
         userGuess = int(input("Your input number is less than the number. Try increasing your numerical input. \n\nEnter your guess here: "))
         if userGuess == randomNum:
             break
+
+# if the user guessed the number correctly
+if userGuess == randomNum:
+    print (f"\nYou're correct! \nCorrect answer: {randomNum}\n")
