@@ -20,3 +20,7 @@ while randomNum != userGuess:
         userGuess = int(input("Your input number is greater than the number. Try decreasing your numerical input. \n\nEnter your guess here: "))
         if userGuess == randomNum:
             break
+    elif userGuess < randomNum:
+        userGuess = int(input("Your input number is less than the number. Try increasing your numerical input. \n\nEnter your guess here: "))
+        if userGuess == randomNum:
+            break
