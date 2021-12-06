@@ -6,7 +6,7 @@
 # Repeat asking the user until the random number has been guessed correctly.
 
 # greetings to the user
-print ("\n\033[1m| GUESS THE NUMBER GAME |\033[0m \n\n\033[1m\033[95mDirection:\033[0m This program will generate one \033[4mrandom number from 0 to 100.\033[0m You should guess it correctly. Otherwise, you would be asked repeatedly. Don't worry, we will give you some hints.")
+print ("\n\033[1m| GUESS THE NUMBER GAME |\033[0m \n\n\033[1m\033[95mDirection:\033[0m This program will generate a \033[4mrandom number from 0 to 100.\033[0m You are to guess it correctly. If you don't, you'll be asked repeatedly. Don't worry, we'll provide some hints.")
 
 # code for generating random number from 0-100
 from random import randrange
@@ -27,4 +27,4 @@ while randomNum != userGuess:
 
 # if the user guessed the number correctly
 if userGuess == randomNum:
-    print (f"\n\033[1m\033[92mYou're correct!\033[0m \nThe answer is {randomNum}.\n")
+    print (f"\n\033[1m\033[92mYou're correct!\033[0m \nThe answer is \033[1m{randomNum}\033[0m.\n")
