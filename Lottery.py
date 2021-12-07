@@ -28,12 +28,13 @@ while restart:
         else:
             luckyNumDup = True
             break
+    # list of lucky numbers    
     luckyNum123 = luckyNum1, luckyNum2, luckyNum3
 
     # greeting to the user
     print ("\nWELCOME TO PEPITO MANA-LOTTERY \n")
 
-    # looping (if the user input is either an alphabet or a number beyond the scope)
+    # looping for 1st number (if the user input is either an alphabet or a number beyond the scope)
     userNum1Loop = False
     while not(userNum1Loop):
         userNum1 = input("(1) Pick a number from 0 to 9  : ")
@@ -48,7 +49,7 @@ while restart:
             print ("Please input numerical value only.")
             userNum1Loop = False
 
-    # looping (if the user input is either an alphabet, a number beyond the scope, or a duplicate number)
+    # looping for 2nd number (if the user input is either an alphabet, a number beyond the scope, or a duplicate number)
     userNum2Loop = False
     while not(userNum2Loop):
         userNum2 = input("(2) Pick a number from 0 to 9  : ")
@@ -66,7 +67,7 @@ while restart:
             print ("Please input numerical value only.")
             userNum2Loop = False
 
-    # looping (if the user input is either an alphabet, a number beyond the scope, or a duplicate number)
+    # looping for 3rd number (if the user input is either an alphabet, a number beyond the scope, or a duplicate number)
     userNum3Loop = False
     while not(userNum3Loop):
         userNum3 = input("(3) Pick a number from 0 to 9  : ")
@@ -84,10 +85,27 @@ while restart:
             print ("Please input numerical value only.")
             userNum3Loop = False
 
-    userNum123 = userNum1, userNum2, userNum3
-    print (f"Your numbers: {userNum1}, {userNum2}, {userNum3}")
+    # list of user inputed numbers
+    userNum123 = int(userNum1), int(userNum2), int(userNum3)
+    print (f"Your numbers: {int(userNum1)}, {int(userNum2)}, {int(userNum3)}")
 
+    # if the user won
     if sorted(luckyNum123) == sorted(userNum123):
         playAgain = input(f"You won! \nThe winning numbers are [{luckyNum1}, {luckyNum2}, {luckyNum3}] \nDo you want to play again? (Type Y if Yes and N if No) ")
+        # if the user wants to play again
+        if playAgain.upper() == 'Y':
+            restart = True
+        elif playAgain.upper() == 'N':
+            restart = False
+            break
+
+    # if the user lose
     else:
         playAgain = input(f"You lose. \nThe winning numbers are [{luckyNum1}, {luckyNum2}, {luckyNum3}] \nDo you want to play again? (Type Y if Yes and N if No) ")
+        if playAgain.upper() == 'Y':
+            restart = True
+        elif playAgain.upper() == 'N':
+            restart = False
+            break
+
+print ("\nThank you for playing. Come again.\n")
