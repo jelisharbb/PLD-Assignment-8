@@ -26,15 +26,15 @@ while restart:
             break
     luckyNum123 = luckyNum1, luckyNum2, luckyNum3
 
-print ("\nWELCOME TO PEPITO MANA-LOTTERY \n")
+    print ("\nWELCOME TO PEPITO MANA-LOTTERY \n")
 
-userNum1 = input("(1) Pick a number from 0 to 9  : ")
-userNum2 = input("(2) Pick a number from 0 to 9  : ")
-userNum3 = input("(3) Pick a number from 0 to 9  : ")
-userNum123 = userNum1, userNum2, userNum3
-print (f"Your numbers: {userNum1}, {userNum2}, {userNum3}")
+    userNum1 = input("(1) Pick a number from 0 to 9  : ")
+    userNum2 = input("(2) Pick a number from 0 to 9  : ")
+    userNum3 = input("(3) Pick a number from 0 to 9  : ")
+    userNum123 = userNum1, userNum2, userNum3
+    print (f"Your numbers: {userNum1}, {userNum2}, {userNum3}")
 
-if sorted(luckyNum123) == sorted(userNum123):
-    playAgain = input(f"You won! \nThe winning numbers are [{luckyNum1}, {luckyNum2}, {luckyNum3}] \nDo you want to play again? (Type Y if Yes and N if No) ")
-else:
-    playAgain = input(f"You lose. \nThe winning numbers are [{luckyNum1}, {luckyNum2}, {luckyNum3}] \nDo you want to play again? (Type Y if Yes and N if No) ")
+    if sorted(luckyNum123) == sorted(userNum123):
+        playAgain = input(f"You won! \nThe winning numbers are [{luckyNum1}, {luckyNum2}, {luckyNum3}] \nDo you want to play again? (Type Y if Yes and N if No) ")
+    else:
+        playAgain = input(f"You lose. \nThe winning numbers are [{luckyNum1}, {luckyNum2}, {luckyNum3}] \nDo you want to play again? (Type Y if Yes and N if No) ")
