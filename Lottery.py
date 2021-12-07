@@ -66,7 +66,24 @@ while restart:
             print ("Please input numerical value only.")
             userNum2Loop = False
 
-    userNum3 = input("(3) Pick a number from 0 to 9  : ")
+    # looping (if the user input is either an alphabet, a number beyond the scope, or a duplicate number)
+    userNum3Loop = False
+    while not(userNum3Loop):
+        userNum3 = input("(3) Pick a number from 0 to 9  : ")
+        if userNum3.isdigit():
+            userNum3Fnl = int(userNum3)
+            if userNum3Fnl == userNum1Fnl or userNum3Fnl == userNum2Fnl:
+                print ("You cannot enter same numbers. Please choose another number.")
+                userNum3Loop = False
+            elif userNum3Fnl <= 9 and userNum3Fnl >= 0:
+                userNum3Loop = True
+            else:
+                print ("Your input is beyond the scope of the lottery. Please choose a number from 0 to 9 only.")
+                userNum3Loop = False
+        else:
+            print ("Please input numerical value only.")
+            userNum3Loop = False
+
     userNum123 = userNum1, userNum2, userNum3
     print (f"Your numbers: {userNum1}, {userNum2}, {userNum3}")
 
