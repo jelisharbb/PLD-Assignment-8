@@ -9,10 +9,22 @@
 
 from random import randrange
 
-luckyNum1 = randrange (0, 9)
-luckyNum2 = randrange (0, 9)
-luckyNum3 = randrange (0, 9)
-luckyNum123 = luckyNum1, luckyNum2, luckyNum3
+restart = True
+while restart:
+    luckyNum1 = randrange (0, 9)
+    luckyNum2 = randrange (0, 9)
+    luckyNum3 = randrange (0, 9)
+
+    luckyNumDup = False
+    while not(luckyNumDup):
+        if luckyNum1 == luckyNum2:
+            luckyNum2 = randrange (0, 9)
+        elif luckyNum1 == luckyNum3 or luckyNum2 == luckyNum3:
+            luckyNum3 = randrange (0, 9)
+        else:
+            luckyNumDup = True
+            break
+    luckyNum123 = luckyNum1, luckyNum2, luckyNum3
 
 print ("\nWELCOME TO PEPITO MANA-LOTTERY \n")
 
