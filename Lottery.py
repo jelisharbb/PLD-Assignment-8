@@ -33,7 +33,7 @@ while restart:
     # greeting to the user
     print ("\nWELCOME TO PEPITO MANA-LOTTERY \n")
 
-    # looping (if the input of the user is either an alphabet or numbers beyond the the scope)
+    # looping (if the user input is either an alphabet or a number beyond the scope)
     userNum1Loop = False
     while not(userNum1Loop):
         userNum1 = input("(1) Pick a number from 0 to 9  : ")
@@ -48,7 +48,24 @@ while restart:
             print ("Please input numerical value only.")
             userNum1Loop = False
 
-    userNum2 = input("(2) Pick a number from 0 to 9  : ")
+    # looping (if the user input is either an alphabet, a number beyond the scope, or a duplicate number)
+    userNum2Loop = False
+    while not(userNum2Loop):
+        userNum2 = input("(2) Pick a number from 0 to 9  : ")
+        if userNum2.isdigit():
+            userNum2Fnl = int(userNum2)
+            if userNum2Fnl == userNum1Fnl:
+                print ("You cannot enter same numbers. Please choose another number.")
+                userNum2Loop = False
+            elif userNum2Fnl <= 9 and userNum2Fnl >= 0:
+                userNum2Loop = True
+            else:
+                print ("Your input is beyond the scope of the lottery. Please choose a number from 0 to 9 only.")
+                userNum2Loop = False
+        else:
+            print ("Please input numerical value only.")
+            userNum2Loop = False
+
     userNum3 = input("(3) Pick a number from 0 to 9  : ")
     userNum123 = userNum1, userNum2, userNum3
     print (f"Your numbers: {userNum1}, {userNum2}, {userNum3}")
