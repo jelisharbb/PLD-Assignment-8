@@ -9,12 +9,16 @@
 
 from random import randrange
 
+# looping (if the user wants to play again)
 restart = True
 while restart:
+
+    # generating three lucky numbers
     luckyNum1 = randrange (0, 9)
     luckyNum2 = randrange (0, 9)
     luckyNum3 = randrange (0, 9)
 
+    # looping (if the generated lucky numbers have duplication)
     luckyNumDup = False
     while not(luckyNumDup):
         if luckyNum1 == luckyNum2:
@@ -26,9 +30,24 @@ while restart:
             break
     luckyNum123 = luckyNum1, luckyNum2, luckyNum3
 
+    # greeting to the user
     print ("\nWELCOME TO PEPITO MANA-LOTTERY \n")
 
-    userNum1 = input("(1) Pick a number from 0 to 9  : ")
+    # looping (if the input of the user is either an alphabet or numbers beyond the the scope)
+    userNum1Loop = False
+    while not(userNum1Loop):
+        userNum1 = input("(1) Pick a number from 0 to 9  : ")
+        if userNum1.isdigit():
+            userNum1Fnl = int(userNum1)
+            if userNum1Fnl <= 9 and userNum1Fnl >= 0:
+                userNum1Loop = True
+            else:
+                print ("Your input is beyond the scope of the lottery. Please choose a number from 0 to 9 only.")
+                userNum1Loop = False
+        else:
+            print ("Please input numerical value only.")
+            userNum1Loop = False
+
     userNum2 = input("(2) Pick a number from 0 to 9  : ")
     userNum3 = input("(3) Pick a number from 0 to 9  : ")
     userNum123 = userNum1, userNum2, userNum3
